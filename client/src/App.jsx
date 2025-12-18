@@ -39,6 +39,7 @@ function App() {
 
           {/* Redirect */}
           <Route path="/admin" element={<Navigate to="/admin/login" />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
     </Router>
