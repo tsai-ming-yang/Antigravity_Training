@@ -1,0 +1,42 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Testing
+coverage
+
+# Production
+dist
+build
+
+# Misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+backend.log
+
+# Uploads and DB
+server/uploads/*
+!server/uploads/.gitkeep
+*.db
+*.sqlite
+
+# Vite
+client/dist
+client/.eslintcache
+
+# Debug scripts
+debug_*.js
+fix_encoding.js
+migrate_*.js
+populate_demo.js
+get_courses.js
