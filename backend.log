@@ -1,0 +1,551 @@
+
+> server@1.0.0 start
+> node index.js
+
+PRAGMA foreign_keys = ON
+CREATE TABLE IF NOT EXISTS courses (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    start_date TEXT,
+    end_date TEXT,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP
+  );
+CREATE TABLE IF NOT EXISTS media (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    course_id INTEGER NOT NULL,
+    filename TEXT NOT NULL,
+    original_name TEXT,
+    type TEXT NOT NULL, -- 'image' or 'video'
+    duration INTEGER DEFAULT 10,
+    display_order INTEGER DEFAULT 0,
+    FOREIGN KEY (course_id) REFERENCES courses(id) ON DELETE CASCADE
+  );
+CREATE TABLE IF NOT EXISTS training_logs (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id TEXT NOT NULL,
+    course_id INTEGER NOT NULL,
+    media_id INTEGER,
+    start_time TEXT,
+    end_time TEXT,
+    created_at TEXT DEFAULT CURRENT_TIMESTAMP
+  );
+Server running on http://localhost:3001
+SELECT * FROM courses ORDER BY created_at DESC
+SELECT * FROM courses ORDER BY created_at DESC
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SELECT * FROM courses ORDER BY created_at DESC
+SELECT * FROM courses ORDER BY created_at DESC
+SELECT * FROM courses ORDER BY created_at DESC
+SELECT * FROM courses ORDER BY created_at DESC
+SELECT * FROM courses ORDER BY created_at DESC
+SELECT * FROM courses ORDER BY created_at DESC
+SELECT * FROM courses ORDER BY created_at DESC
+SELECT * FROM courses ORDER BY created_at DESC
+SELECT filename FROM media WHERE course_id = '6'
+DELETE FROM courses WHERE id = '6'
+SELECT * FROM courses ORDER BY created_at DESC
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+SELECT * FROM courses ORDER BY created_at DESC
+SELECT * FROM courses ORDER BY created_at DESC
+SqliteError: table courses has no column named description
+    at Database.prepare (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at /Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:43:21
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at requireAdmin (/Users/tsai/Downloads/Antigravity_Training/server/routes/admin.js:23:75)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+    at next (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:157:13)
+    at Route.dispatch (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/route.js:117:3)
+    at handle (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/index.js:435:11)
+    at Layer.handleRequest (/Users/tsai/Downloads/Antigravity_Training/server/node_modules/router/lib/layer.js:152:17)
+
+        SELECT *, 
+        EXISTS(SELECT 1 FROM training_logs WHERE user_id = 'C00794' AND course_id = courses.id) as is_completed
+        FROM courses 
+        WHERE date('now', 'localtime') BETWEEN start_date AND end_date 
+        ORDER BY start_date DESC
+    
+
+        SELECT *, 
+        EXISTS(SELECT 1 FROM training_logs WHERE user_id = 'C00794' AND course_id = courses.id) as is_completed
+        FROM courses 
+        WHERE date('now', 'localtime') BETWEEN start_date AND end_date 
+        ORDER BY start_date DESC
+    
+INSERT INTO courses (title, start_date, end_date, description) VALUES ('性騷擾防治規範課程', '2025-12-17', '2025-12-31', '')
+SELECT * FROM courses ORDER BY created_at DESC
+SELECT * FROM courses ORDER BY created_at DESC
+SELECT * FROM courses ORDER BY created_at DESC
+SELECT * FROM media WHERE course_id = '7' ORDER BY display_order ASC
+SELECT * FROM media WHERE course_id = '7' ORDER BY display_order ASC
+SELECT COUNT(*) as count FROM media WHERE course_id = '7'
+BEGIN
+INSERT INTO media (course_id, filename, original_name, type, display_order, duration) VALUES ('7', '1766021764578-111312550.mp4', '【2025年】性騷擾防治規範'/*+22 bytes*/, 'video', 0.0, 10.0)
+COMMIT
+SELECT * FROM courses ORDER BY created_at DESC
+SELECT * FROM media WHERE course_id = '7' ORDER BY display_order ASC
+SELECT COUNT(*) as count FROM media WHERE course_id = '7'
+BEGIN
+INSERT INTO media (course_id, filename, original_name, type, display_order, duration) VALUES ('7', '1766021770174-878283316.png', '【2025年】性騷擾防治規範'/*+12 bytes*/, 'image', 1.0, 10.0)
+COMMIT
+SELECT * FROM courses ORDER BY created_at DESC
+SELECT * FROM media WHERE course_id = '7' ORDER BY display_order ASC
+UPDATE media SET display_order = 0.0, duration = '' WHERE id = '12'
+UPDATE media SET display_order = 1.0, duration = '1' WHERE id = '13'
+UPDATE media SET display_order = 0.0, duration = '1' WHERE id = '12'
+UPDATE courses SET title = '性騷擾防治規範課程', start_date = '2025-12-17', end_date = '2025-12-31', description = '' WHERE id = '7'
+
+        SELECT *, 
+        EXISTS(SELECT 1 FROM training_logs WHERE user_id = 'C00794' AND course_id = courses.id) as is_completed
+        FROM courses 
+        WHERE date('now', 'localtime') BETWEEN start_date AND end_date 
+        ORDER BY start_date DESC
+    
+
+        SELECT *, 
+        EXISTS(SELECT 1 FROM training_logs WHERE user_id = 'C00794' AND course_id = courses.id) as is_completed
+        FROM courses 
+        WHERE date('now', 'localtime') BETWEEN start_date AND end_date 
+        ORDER BY start_date DESC
+    
+SELECT * FROM media WHERE course_id = '7' ORDER BY display_order ASC
+SELECT * FROM media WHERE course_id = '7' ORDER BY display_order ASC
+INSERT INTO training_logs (user_id, course_id, media_id, start_time, end_time) VALUES ('C00794', '7', NULL, '2025-12-18T01:36:24.568Z', '2025-12-18T01:36:27.930Z')
+
+        SELECT *, 
+        EXISTS(SELECT 1 FROM training_logs WHERE user_id = 'C00794' AND course_id = courses.id) as is_completed
+        FROM courses 
+        WHERE date('now', 'localtime') BETWEEN start_date AND end_date 
+        ORDER BY start_date DESC
+    
+
+        SELECT *, 
+        EXISTS(SELECT 1 FROM training_logs WHERE user_id = 'C00794' AND course_id = courses.id) as is_completed
+        FROM courses 
+        WHERE date('now', 'localtime') BETWEEN start_date AND end_date 
+        ORDER BY start_date DESC
+    
+SELECT * FROM courses ORDER BY created_at DESC
+SELECT * FROM courses ORDER BY created_at DESC
+SELECT * FROM courses ORDER BY created_at DESC
+SELECT * FROM courses ORDER BY created_at DESC
+
+        SELECT 
+            l.id, l.user_id, l.start_time, l.end_time,
+            c.title as course_title,
+            (strftime('%s', l.end_time) - strftime('%s', l.start_time)) as duration_seconds
+        FROM training_logs l
+        LEFT JOIN courses c ON l.course_id = c.id
+     ORDER BY l.start_time DESC
+
+        SELECT 
+            l.id, l.user_id, l.start_time, l.end_time,
+            c.title as course_title,
+            (strftime('%s', l.end_time) - strftime('%s', l.start_time)) as duration_seconds
+        FROM training_logs l
+        LEFT JOIN courses c ON l.course_id = c.id
+     ORDER BY l.start_time DESC
+
+        SELECT 
+            l.id, l.user_id, l.start_time, l.end_time,
+            c.title as course_title,
+            (strftime('%s', l.end_time) - strftime('%s', l.start_time)) as duration_seconds
+        FROM training_logs l
+        LEFT JOIN courses c ON l.course_id = c.id
+     ORDER BY l.start_time DESC
+
+        SELECT 
+            l.id, l.user_id, l.start_time, l.end_time,
+            c.title as course_title,
+            (strftime('%s', l.end_time) - strftime('%s', l.start_time)) as duration_seconds
+        FROM training_logs l
+        LEFT JOIN courses c ON l.course_id = c.id
+     ORDER BY l.start_time DESC
+DELETE FROM training_logs
+
+        SELECT 
+            l.id, l.user_id, l.start_time, l.end_time,
+            c.title as course_title,
+            (strftime('%s', l.end_time) - strftime('%s', l.start_time)) as duration_seconds
+        FROM training_logs l
+        LEFT JOIN courses c ON l.course_id = c.id
+     ORDER BY l.start_time DESC
+SELECT * FROM courses ORDER BY created_at DESC
+SELECT * FROM courses ORDER BY created_at DESC
+
+        SELECT *, 
+        EXISTS(SELECT 1 FROM training_logs WHERE user_id = 'C00794' AND course_id = courses.id) as is_completed
+        FROM courses 
+        WHERE date('now', 'localtime') BETWEEN start_date AND end_date 
+        ORDER BY start_date DESC
+    
+
+        SELECT *, 
+        EXISTS(SELECT 1 FROM training_logs WHERE user_id = 'C00794' AND course_id = courses.id) as is_completed
+        FROM courses 
+        WHERE date('now', 'localtime') BETWEEN start_date AND end_date 
+        ORDER BY start_date DESC
+    
+SELECT * FROM courses ORDER BY created_at DESC
+SELECT * FROM courses ORDER BY created_at DESC
