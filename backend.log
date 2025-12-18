@@ -549,3 +549,19 @@ SELECT * FROM courses ORDER BY created_at DESC
     
 SELECT * FROM courses ORDER BY created_at DESC
 SELECT * FROM courses ORDER BY created_at DESC
+
+        SELECT *, 
+        EXISTS(SELECT 1 FROM training_logs WHERE user_id = 'C00794' AND course_id = courses.id) as is_completed
+        FROM courses 
+        WHERE date('now', 'localtime') BETWEEN start_date AND end_date 
+        ORDER BY start_date DESC
+    
+
+        SELECT *, 
+        EXISTS(SELECT 1 FROM training_logs WHERE user_id = 'C00794' AND course_id = courses.id) as is_completed
+        FROM courses 
+        WHERE date('now', 'localtime') BETWEEN start_date AND end_date 
+        ORDER BY start_date DESC
+    
+SELECT * FROM courses ORDER BY created_at DESC
+SELECT * FROM courses ORDER BY created_at DESC
